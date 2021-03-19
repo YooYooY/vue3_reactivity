@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>computed</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <!-- <script src="/node_modules/@vue/reactivity/dist/reactivity.global.js"></script> -->
+    <script src="../dist/VueReactivity.js"></script>
+    <script>
+      const { reactive, effect, computed } = VueReactivity
+
+      const state = reactive({ name: 'chenwl', age: 12 })
+      const birth_year = computed(() => {
+        console.log("computed execute");
+        return new Date().getFullYear() - state.age
+      })
+
+      effect(() => {
+        app.innerHTML = `出生于 ${birth_year.value} 年`
+      })
+
+      setTimeout(() => {
+        // state.name = "change"
+        state.age++;
+      }, 1000)
+    </script>
+  </body>
+</html>
