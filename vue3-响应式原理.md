@@ -1251,7 +1251,7 @@ export function computed(getterOrOptions) {
 
 ref的实现，判断传入值是不是对象，对象用`reactive`包裹处理，获取值时收集依赖，设置值时触发更新
 
-```
+```js
 import { hasChanged, isObject } from "../shared/index";
 import { track, trigger, TriggerType } from "./effect";
 import { reactive } from "./reactive";
