@@ -1,8 +1,8 @@
 {
-  "name": "vue_learn",
+  "name": "vue-reactivity",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "vue reactivity api",
+  "main": "/dist/VueReactivity.js",
 "scripts": {
   "dev": "rollup -c -w"
 },
